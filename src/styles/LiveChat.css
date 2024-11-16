@@ -1,28 +1,61 @@
+#chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrerar innehållet horisontellt */
+  padding: 10px; /* Lägg till lite padding runt om */
+}
+
 #message-container {
-    width: 80%;
-    max-width: 1200px;
-  }
-  
-  #message-container div {
-    background-color: #CCC;
-    padding: 5px;
-  }
-  
-  #message-container div:nth-child(2n) {
-    background-color: #FFF;
-  }
-  
-  #send-container {
-    position: fixed;
-    padding-bottom: 30px;
-    bottom: 0;
-    background-color: white;
-    max-width: 1200px;
-    width: 80%;
-    display: flex;
-  }
-  
-  #message-input {
-    flex-grow: 1;
-  }
-  
+  width: 80%;
+  max-width: 1200px;
+  overflow-y: auto;
+  margin-bottom: 20px; /* Lägg till lite mellanrum under meddelandekontainern */
+}
+
+#message-container div {
+  background-color: rgba(50, 45, 49, 0.36);
+  padding: 1rem;
+  margin: 0.2rem;
+  border-radius: 10px;
+}
+#message-container div:nth-child(2n) {
+  background-color: rgba(194, 194, 194, 0.36);
+}
+#send-container {
+  width: 80%;
+  max-width: 1200px;
+  display: flex; /* Gör så att input och button är på samma rad */
+  align-items: center; /* Vertikalt centrera input och button */
+  gap: 10px; /* Lägg till mellanrum mellan input och button */
+}
+
+#message-input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(213, 181, 166, 0.36);
+  transition: all 0.3s ease;
+}
+#message-input:focus {
+  border: none;
+  background-color: rgba(213, 181, 166, 0.56);
+  outline: none;
+  box-shadow: 0 0 10px rgba(213, 181, 166, 0.5);
+}
+
+#message-input:active {
+  background-color: rgba(213, 181, 166, 0.45);
+}
+#send-button {
+  padding: 0.5rem 1rem;
+  background-color: #8d4a40;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background-color: #48302a;
+}
