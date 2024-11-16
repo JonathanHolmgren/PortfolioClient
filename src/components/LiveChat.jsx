@@ -8,8 +8,13 @@ function LiveChat() {
     const messageContainerRef = useRef();
     const socketRef = useRef();
 
+    const socketUrl = import.meta.env.VITE_SOCKET_URL;
+
+
     useEffect(() => {
-        const socket = io('http://localhost:3000'); // Anslut till servern
+
+         
+        const socket = io(socketUrl); // Anslut till servern
         socketRef.current = socket;
 
         const name = prompt('What is your name?') || 'Anonymous';
